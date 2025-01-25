@@ -28,7 +28,7 @@ const Hook = (arg: number) => {
       );
 
       if (verification === 1 ) {
-        const prepared: Transaction = prepare({
+        const prepared = prepare({
           TransactionType: "TrustSet",
           LimitAmount: {
             currency: "USD",
@@ -36,10 +36,14 @@ const Hook = (arg: number) => {
             value: String(Number(100_000_000)),
           },
         });
+
+        if (typeof prepared !== 'object' || prepared === null || 'error' in prepared) {
+          return rollback(`Trustline-Approver: Failed to prepare transaction.`, INTERNAL_ERROR);
+        }
       
-        trace("Prepared TX", prepared)
+        trace("Prepared TX", prepared);
         
-        const emitted = emit(prepared);
+        const emitted = emit(prepared as Transaction);
       
         trace("Emitted", emitted);
       } else {
