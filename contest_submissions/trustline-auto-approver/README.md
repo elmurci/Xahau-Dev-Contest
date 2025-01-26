@@ -82,5 +82,5 @@ After generating the signature, the trustline can be set like this:
 
 ### 4. Auto approval
 
-The hook will be triggered and a `TrustSet` transaction from the issuer to the user will be emitted.
+The hook will be triggered and, if the signature provided is valid, a `TrustSet` transaction from the issuer to the user will be emitted.
 ![Configure Hook](assets/hook.005.jpeg)
