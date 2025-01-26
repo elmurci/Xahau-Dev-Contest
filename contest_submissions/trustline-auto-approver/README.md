@@ -58,7 +58,7 @@ The public key passed represents the third party Compliance Oracle asigning KYC/
 
 `yarn trust-set {CERTIFICATE_SIGNATURE}` will issue a `TrustSet` transaction from the user to the issuer account.
 
-The signature to be passed to the above command can be generated with `yarn certificate`.
+The signature to be passed to the above command can be generated with `yarn certificate {ADDRESS}`.
 
 For the sake of this PoC, the certificate will be a message with the following format (in a real world scenario this message would vary and include information like expiry date and such):
 
@@ -69,6 +69,8 @@ Signed by a third party entity representing the KYC/AML approval for the user's 
 Example response:
 
 ```
+yarn certificate rUt9o95XkYwTwwqG67GTe2BefuAQ443PeA
+
 Signature: 7189A4FD8009B30610CE7C7F81FFE21A38C36E971EE497EAFB467AC438B0D7F65126FA4C0C29E8C1CC5578BDC2F7A6A255FA2BDBB2951EBA041B746D3494BE0D
 Public Key: ED5F3FCD7FC27ED8FAD7673B2C9C00E3D37711CBB6D9B0E4DDC0F2FFE2941E15B5
 Message: 4B59435F415050524F5645447C725574396F3935586B59775477777147363747546532426566754151343433506541
