@@ -18,7 +18,8 @@ import {
 import "dotenv/config";
 
 export async function main(): Promise<void> {
-  const xrpldWss = process.env.XRPLD_WSS;
+
+  const xrpldWss = process.env.XRPLD_WSS || "wss://jshooks.xahau-test.net";
   if (!xrpldWss) {
     throw new Error("XRPLD_WSS environment variable is not set");
   }
@@ -36,7 +37,11 @@ export async function main(): Promise<void> {
   const userSeed = process.env.USER_SEED;
   const issuer_wallet = Wallet.fromSeed(issuerSeed!);
   const user_wallet = Wallet.fromSeed(userSeed!);
-  console.log("Issuer:", issuer_wallet.classicAddress, "User:", user_wallet.classicAddress);
+
+  console.log(
+    "Issuer:", issuer_wallet.classicAddress,
+    "User:", user_wallet.classicAddress
+  );
 
   const clearHook = {
     Flags: SetHookFlags.hsfNSDelete,

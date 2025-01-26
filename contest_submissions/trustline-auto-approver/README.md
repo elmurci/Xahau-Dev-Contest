@@ -36,7 +36,9 @@ Also referred to as the **KYC/AML Attestation Provider**. This party verifies us
 
 - Install dependencies: `yarn`
 - Rename `.env.example` to `.env`
-- Generate two accounts from the [JS Hooks Faucet](https://jshooks.xahau-test.net/) and add them to the `.env` file.
+- Generate two accounts: from the [JS Hooks Faucet](https://jshooks.xahau-test.net/) if you are using the experimental network or by funding them if running local/standalone. After that, add them to the `.env` file.
+
+If you are running standalone, use version `2024.7.17-jshooks+933`.
 
 ### 1. Install Hook on Issuer Account
 
@@ -46,7 +48,7 @@ Also referred to as the **KYC/AML Attestation Provider**. This party verifies us
 
 ### 2. Configure Hook
 
-`yarn update-key ED01FA53FA5A7E77798F882ECE20B1ABC00BB358A9E55A202D0D0676BD0CE37A63` will configure the hook to store and use the passed public key to verify the signatures on `TrustSet` transactions.
+`yarn update-key ED5F3FCD7FC27ED8FAD7673B2C9C00E3D37711CBB6D9B0E4DDC0F2FFE2941E15B5` will configure the hook to store and use the passed public key to verify the signatures on `TrustSet` transactions.
 
 The public key passed represents the third party Compliance Oracle asigning KYC/AML certificates.
 
