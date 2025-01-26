@@ -26,6 +26,9 @@ node_modules
 
 dist
 
+# Standalone files
+xahau/*
+
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
